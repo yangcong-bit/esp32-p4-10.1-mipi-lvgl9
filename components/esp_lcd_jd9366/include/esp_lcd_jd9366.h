@@ -1,7 +1,10 @@
 /*
- * SPDX-FileCopyrightText: 2024 Espressif Systems (Shanghai) CO LTD
+ * SPDX-FileCopyrightText: 2024-2026 Espressif Systems (Shanghai) CO LTD
  *
  * SPDX-License-Identifier: Apache-2.0
+ *
+ * Modified by yangcong-bit (2026): added board-specific DPI timing macro for the
+ * 10.1" 800x1280 JD9366 panel. See NOTICE for the full modification record.
  */
 
 #pragma once

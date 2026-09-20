@@ -1,7 +1,12 @@
 /*
- * SPDX-FileCopyrightText: 2024 Espressif Systems (Shanghai) CO LTD
+ * SPDX-FileCopyrightText: 2024-2026 Espressif Systems (Shanghai) CO LTD
  *
  * SPDX-License-Identifier: Apache-2.0
+ *
+ * Modified by yangcong-bit (2026):
+ *   - adapted panel initialization sequence and DPI timing for the
+ *     10.1" 800x1280 IPS panel (JD9366) used on the WTDKP4C5-S1 board
+ *   - see NOTICE for the full modification record
  */
 
 #include "soc/soc_caps.h"

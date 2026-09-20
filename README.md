@@ -110,9 +110,11 @@ idf.py -p COM16 flash monitor
 | `lvgl/lvgl` | ~9.2 | 组件注册表 |
 | `espressif/esp_lcd_touch` | >=1.1.2 | 组件注册表 |
 
-> 本地组件（`components/`）为自维护驱动：
-> - `esp_lcd_jd9366`：JD9366 显示驱动，已禁用 DSI Command ACK 以规避初始化死锁
-> - `esp_lcd_touch_jd9366`：JD9366 触摸驱动，I2C BackDoor 协议
+> 本地组件（`components/`）说明：
+> - `esp_lcd_jd9366`：**基于乐鑫 ESP-IDF 参考驱动修改**，按本屏规格适配初始化序列与 DPI 时序（已禁用 DSI Command ACK 以规避初始化死锁）
+> - `esp_lcd_touch_jd9366`：基于乐鑫 `esp_lcd_touch` 框架，**按屏厂参考代码实现 JD9366 I2C BackDoor 协议**
+>
+> 两个组件均为 **Apache-2.0 衍生作品**，保留了上游版权声明，修改记录见 [`NOTICE`](NOTICE)。
 
 ## ⚠️ 已知注意事项
 
@@ -124,4 +126,18 @@ idf.py -p COM16 flash monitor
 
 ## 📄 License
 
-本项目代码基于 Apache-2.0 许可（与乐鑫驱动保持一致）。
+本项目采用 **Apache License 2.0**，完整文本见 [`LICENSE`](LICENSE)。
+
+其中 `components/esp_lcd_jd9366` 与 `components/esp_lcd_touch_jd9366` 为
+**乐鑫（Espressif Systems）驱动代码的衍生作品**，遵循上游 Apache-2.0 许可；
+本项目保留其原始版权声明，并对所做的修改作出声明。详见 [`NOTICE`](NOTICE)。
+
+```
+Copyright 2026 yangcong-bit
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+```

@@ -1,3 +1,18 @@
+/*
+ * SPDX-FileCopyrightText: 2024-2026 Espressif Systems (Shanghai) CO LTD
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Modified by yangcong-bit (2026):
+ *   - re-implemented the BackDoor protocol according to the panel vendor's
+ *     reference code, so that touch works on the WTDKP4C5-S1 board
+ *   - added I2C address / reset / interrupt handling for this panel
+ *   - see NOTICE for the full modification record
+ *
+ * NOTE: this file previously carried no license header. The upstream driver it
+ * derives from is Apache-2.0 (Espressif Systems), so the header is restored here.
+ */
+
 // JD9366 触摸屏驱动程序 - v2.5
 // 按照原厂代码完全重新实现BackDoor协议
 

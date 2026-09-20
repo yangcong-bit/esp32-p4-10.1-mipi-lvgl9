@@ -1,0 +1,58 @@
+esp32-p4-10.1-mipi-lvgl9
+Copyright 2026 yangcong-bit
+
+This product includes software developed by Espressif Systems (Shanghai) CO LTD
+and contributors (https://www.espressif.com/).
+
+================================================================================
+Third-party components and modifications
+================================================================================
+
+The project contains components derived from Espressif Systems' ESP-IDF
+reference code, which is licensed under the Apache License, Version 2.0.
+
+--------------------------------------------------------------------------------
+components/esp_lcd_jd9366/
+--------------------------------------------------------------------------------
+Upstream      : Espressif Systems (Shanghai) CO LTD
+Copyright     : 2024-2026 Espressif Systems (Shanghai) CO LTD
+License       : Apache-2.0
+
+Modifications by yangcong-bit (2026):
+  - Adapted the panel initialization command sequence (panel-init-sequence) to
+    the vendor-provided sequence for the 10.1" 800x1280 IPS panel (JD9366).
+  - Adjusted DPI timing parameters (h/v sync porches, pulse widths, DPI clock,
+    lane bit rate) to match the panel datasheet.
+  - Added the board configuration for the WTDKP4C5-S1 development board.
+
+--------------------------------------------------------------------------------
+components/esp_lcd_touch_jd9366/
+--------------------------------------------------------------------------------
+Upstream      : Espressif Systems (Shanghai) CO LTD (esp_lcd_touch driver framework)
+Copyright     : 2024-2026 Espressif Systems (Shanghai) CO LTD
+License       : Apache-2.0
+
+Modifications by yangcong-bit (2026):
+  - Re-implemented the JD9366 BackDoor protocol according to the panel vendor's
+    reference code.
+  - Added I2C address, reset and interrupt handling for this specific panel.
+  - Wrapped the implementation as an ESP-IDF component with idf_component.yml.
+
+--------------------------------------------------------------------------------
+main/
+--------------------------------------------------------------------------------
+Copyright     : 2026 yangcong-bit
+License       : Apache-2.0
+
+  - main/main.c        : original work
+  - main/board_config.h: original work (board pin mapping for WTDKP4C5-S1)
+
+================================================================================
+Dependencies (declared in dependencies.lock / idf_component.yml)
+================================================================================
+  - espressif/esp_lcd_touch   (Apache-2.0)
+  - espressif/esp_lvgl_port   (Apache-2.0)
+  - lvgl/lvgl                 (MIT)
+
+Each dependency is distributed under its own license; refer to the corresponding
+component directory under managed_components/ after running `idf.py reconfigure`.
